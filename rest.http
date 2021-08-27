@@ -1,0 +1,26 @@
+# List of the api and their request
+
+
+### test api call
+
+
+###fetch all tickets
+GET http://localhost:8000/api/v1
+
+### add new tickets
+POST http://localhost:8000/api/v1
+Content-Type: application/json
+
+{
+    "task": "Gaming",
+    "hr": 5
+}
+
+### delete tickets
+DELETE http://localhost:8000/api/v1
+
+### update tickets
+PATCH http://localhost:8000/api/v1
+
+{}
+
