@@ -1,15 +1,19 @@
 import express from 'express'
 const app = express()
+import morgan from 'morgan'
+import helmet from 'helmet'
 
 const PORT = 8000
 
 // Mongo Database connection
 import mongoClient from './src/config/db.js'
-mongoClient();
+mongoClient('tiny');
 
 //middleware
 app.use(express.urlencoded())
 app.use(express.json())
+app.use(morgan())
+app.use(helmet())
 
 // import routers
 import routers from './src/routers/index.js'
