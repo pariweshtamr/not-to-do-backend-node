@@ -1,9 +1,7 @@
 import express from 'express'
 const app = express()
 
-
 const PORT = 8000
-
 
 // Mongo Database connection
 import mongoClient from './src/config/db.js'

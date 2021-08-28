@@ -21,4 +21,3 @@ const mongoClient = async () => {
 export default mongoClient
 
 
-// async/await
