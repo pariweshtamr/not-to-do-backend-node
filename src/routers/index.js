@@ -42,18 +42,14 @@ route.post("/", async (req, res)=>{
 })
 
 // delete tickets (DELETE METHOD)
-route.delete("/", async (req, res)=>{
-  
-        const { id } = req.body
-
-        if(!id) {
+route.delete("/", async (req, res)=>{  
+        const { ids } = req.body
+        if(!ids) {
             res.json({status: "error", message: "invalid id request"})
-        }
-        
-        const result = await deleteTasks(id)
-        const msg = result ? result : {message: "Data does not exist"}
+        }       
+        const result = await deleteTasks(ids)
+        const msg = result ? "Data deleted" : "Data does not exist"
         res.json({msg, result})
-
     // console.log('deleting...')
     // res.json({msg: `the requested ticket will be deleted from database`})
 })
@@ -73,8 +69,6 @@ try {
         status: "error",
         message: "Unable to process your request. Please try again later."
     })
-}
-    
+}   
 })
-
 export default route 

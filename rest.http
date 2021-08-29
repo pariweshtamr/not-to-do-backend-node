@@ -21,7 +21,7 @@ DELETE http://localhost:8000/api/v1
 Content-Type: application/json
 
 {
-    "id": "61297554e21d1a1ba419b5b5"
+    "ids": "61297554e21d1a1ba419b5b5"
 }
 
 ### update tickets
