@@ -2,6 +2,7 @@ import express from 'express'
 const app = express()
 import morgan from 'morgan'
 import helmet from 'helmet'
+import cors from 'cors'
 
 const PORT = 8000
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded())
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(helmet())
+app.use(cors())
 
 // import routers
 import routers from './src/routers/index.js'

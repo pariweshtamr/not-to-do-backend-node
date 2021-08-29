@@ -52,7 +52,7 @@ route.delete("/", async (req, res)=>{
         
         const result = await deleteTasks(id)
         const msg = result ? result : {message: "Data does not exist"}
-        res.json(msg, result)
+        res.json({msg, result})
 
     // console.log('deleting...')
     // res.json({msg: `the requested ticket will be deleted from database`})
@@ -62,12 +62,13 @@ route.delete("/", async (req, res)=>{
 route.patch("/", async (req, res)=>{
 try {
     if(!req.body.id){
-        res.json({status: "error", message: "invalid id request"})
+       return res.json({status: "error", message: "invalid id request"})
     }
     const result = await updateTodo(req.body)
     const msg = result ? "Selected data deleted" : "Data does not exist"
-    res.json(msg, result)
+    res.json({msg, result})
 } catch (error) {
+    console.log(error)
     res.json({
         status: "error",
         message: "Unable to process your request. Please try again later."
